@@ -131,3 +131,30 @@ test("omits Live Demo when a project has no usable deployment", () => {
     ["Case Study →", "GitHub ↗"],
   );
 });
+
+test("ATLAS X homepage exposes only its case study until external links are verified", () => {
+  const atlasX: Project = {
+    title: "ATLAS X",
+    eyebrow: "AI Governance & Mission Control",
+    description:
+      "AI governance and mission-control platform for coordinating autonomous agents through policy, risk, authority, provenance and human oversight.",
+    status: "Active",
+    tags: ["AI Governance", "Agents", "Policy", "Risk", "Human Oversight"],
+    github: "",
+    caseStudy: "/projects/atlas-x",
+  };
+
+  const actions = getProjectCardActions(atlasX);
+
+  assert.deepEqual(
+    actions.map(({ kind, label }) => [kind, label]),
+    [
+      ["internal", "Case Study →"],
+    ],
+  );
+
+  assert.deepEqual(
+    getExperienceLinks(atlasX).map(({ key }) => key),
+    [],
+  );
+});

@@ -124,10 +124,22 @@ export const mercuryXProject: Project = {
   caseStudy: "/projects/mercury-x",
 };
 
+export const atlasXProject: Project = {
+  title: "ATLAS X",
+  eyebrow: "AI Governance & Mission Control",
+  description:
+    "AI governance and mission-control platform for coordinating autonomous agents through policy, risk, authority, provenance and human oversight.",
+  status: "Active",
+  tags: ["AI Governance", "Agents", "Policy", "Risk", "Human Oversight"],
+  github: "",
+  caseStudy: "/projects/atlas-x",
+};
+
 export const projects: Project[] = [
   graphShieldProject,
   sentinelOpsProject,
   mercuryXProject,
+  atlasXProject,
   {
     title: "GraphCite-GCN",
     eyebrow: "Graph Machine Learning",
