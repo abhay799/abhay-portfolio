@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test lib/project-links.test.ts"
+    "test": "node --test lib/*.test.ts"
   },
   "dependencies": {
     "next": "16.3.3",

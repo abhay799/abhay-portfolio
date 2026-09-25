@@ -1,7 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { DeploymentFlow } from "@/components/DeploymentFlow";
 import { ProjectExperience } from "@/components/ProjectExperience";
 import { sentinelOpsProject } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "SentinelOps AI | Abhay Kumar",
+  description:
+    "Reliability intelligence for telemetry, failure prediction, RCA challenge, safety-gated remediation and verified recovery.",
+};
 
 const lifecycle = [
   "Sense",

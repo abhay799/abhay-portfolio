@@ -4,10 +4,10 @@ export const siteConfig = {
   description:
     "I build data-driven and AI systems across financial crime intelligence, reliability engineering, machine learning and distributed AI infrastructure.",
   location: "India",
-  email: "your-email@example.com",
+  email: "abhaykumar38921@gmail.com",
   github: "https://github.com/abhay799",
   linkedin: "https://www.linkedin.com/in/abhay-kumar-ba1719261",
-  resume: "#",
+  resume: "",
 };
 
 export const skills = [

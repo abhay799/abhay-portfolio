@@ -1,7 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { DeploymentFlow } from "@/components/DeploymentFlow";
 import { ProjectExperience } from "@/components/ProjectExperience";
 import { graphShieldProject } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "GraphShield AML | Abhay Kumar",
+  description:
+    "Graph-native anti-money-laundering intelligence for connected investigation, evidence retrieval, policy context and human decision support.",
+};
 
 const workflow = [
   "Transaction & entity data",

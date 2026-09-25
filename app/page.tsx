@@ -3,11 +3,15 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { projects, siteConfig, skills } from "@/data/site";
+import { isUsableEmail, hasPublicResume } from "@/lib/site-links";
 
 export default function Home() {
+  const resumeAvailable = hasPublicResume(siteConfig.resume);
+  const contactEmail = isUsableEmail(siteConfig.email) ? siteConfig.email : null;
+
   return (
     <main id="top" className="min-h-screen overflow-hidden">
-      <Navbar />
+      <Navbar resumeAvailable={resumeAvailable} />
 
       <section className="relative isolate flex min-h-screen items-center pt-24">
         <div className="hero-grid absolute inset-0 -z-20 opacity-60" />
@@ -185,12 +189,14 @@ export default function Home() {
               strong engineering meet real business or systems problems.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black"
-              >
-                Email me
-              </a>
+              {contactEmail && (
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black"
+                >
+                  Email me
+                </a>
+              )}
               <a
                 href={siteConfig.linkedin}
                 className="rounded-full border border-white/12 px-5 py-3 text-sm font-medium text-white"
