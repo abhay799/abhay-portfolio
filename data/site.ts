@@ -107,24 +107,27 @@ export const sentinelOpsProject: Project = {
   caseStudy: "/projects/sentinelops-ai",
 };
 
+export const mercuryXProject: Project = {
+  title: "MERCURY X",
+  eyebrow: "AI Workload Orchestration",
+  description:
+    "AI workload orchestration and scheduling engine for compiling workloads into hardware-aware, SLO-aware and safety-validated execution plans.",
+  status: "Active",
+  tags: [
+    "Distributed Systems",
+    "Scheduling",
+    "AI Infrastructure",
+    "APIs",
+    "Telemetry",
+  ],
+  github: "https://github.com/abhay799/mercury-x",
+  caseStudy: "/projects/mercury-x",
+};
+
 export const projects: Project[] = [
   graphShieldProject,
   sentinelOpsProject,
-  {
-    title: "MERCURY X",
-    eyebrow: "Distributed AI Infrastructure",
-    description:
-      "Distributed AI workload execution platform focused on scheduling, workload placement, SLO awareness, telemetry and reliable execution.",
-    status: "Active",
-    tags: [
-      "Distributed Systems",
-      "Scheduling",
-      "AI Infrastructure",
-      "APIs",
-      "Telemetry",
-    ],
-    github: "https://github.com/abhay799/mercury-x",
-  },
+  mercuryXProject,
   {
     title: "GraphCite-GCN",
     eyebrow: "Graph Machine Learning",

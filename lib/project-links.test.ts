@@ -66,6 +66,59 @@ test("builds compact homepage actions in the required order", () => {
   );
 });
 
+test("MERCURY X homepage actions are Case Study then GitHub with no Live Demo", () => {
+  const mercuryX: Project = {
+    title: "MERCURY X",
+    eyebrow: "AI Workload Orchestration",
+    description:
+      "AI workload orchestration and scheduling engine for compiling workloads into hardware-aware, SLO-aware and safety-validated execution plans.",
+    status: "Active",
+    tags: [
+      "Distributed Systems",
+      "Scheduling",
+      "AI Infrastructure",
+      "APIs",
+      "Telemetry",
+    ],
+    github: "https://github.com/abhay799/mercury-x",
+    caseStudy: "/projects/mercury-x",
+  };
+
+  const actions = getProjectCardActions(mercuryX);
+
+  assert.deepEqual(
+    actions.map(({ kind, label }) => [kind, label]),
+    [
+      ["internal", "Case Study →"],
+      ["external", "GitHub ↗"],
+    ],
+  );
+});
+
+test("MERCURY X experience links expose only GitHub without deployment metadata", () => {
+  const mercuryX: Project = {
+    title: "MERCURY X",
+    eyebrow: "AI Workload Orchestration",
+    description:
+      "AI workload orchestration and scheduling engine for compiling workloads into hardware-aware, SLO-aware and safety-validated execution plans.",
+    status: "Active",
+    tags: [
+      "Distributed Systems",
+      "Scheduling",
+      "AI Infrastructure",
+      "APIs",
+      "Telemetry",
+    ],
+    github: "https://github.com/abhay799/mercury-x",
+    caseStudy: "/projects/mercury-x",
+  };
+
+  assert.deepEqual(
+    getExperienceLinks(mercuryX).map(({ key }) => key),
+    ["github"],
+  );
+});
+
 test("omits Live Demo when a project has no usable deployment", () => {
   const actions = getProjectCardActions({
     ...baseProject,
