@@ -7,7 +7,9 @@ import { isUsableEmail, hasPublicResume } from "@/lib/site-links";
 
 export default function Home() {
   const resumeAvailable = hasPublicResume(siteConfig.resume);
-  const contactEmail = isUsableEmail(siteConfig.email) ? siteConfig.email : null;
+  const contactEmail = isUsableEmail(siteConfig.email)
+    ? siteConfig.email
+    : null;
 
   return (
     <main id="top" className="min-h-screen overflow-hidden">
@@ -15,6 +17,7 @@ export default function Home() {
 
       <section className="relative isolate flex min-h-screen items-center pt-24">
         <div className="hero-grid absolute inset-0 -z-20 opacity-60" />
+
         <div className="absolute left-1/2 top-10 -z-10 h-[520px] w-[850px] -translate-x-1/2 rounded-full bg-cyan-400/[0.065] blur-[120px]" />
 
         <div className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
@@ -40,12 +43,14 @@ export default function Home() {
               >
                 View projects
               </a>
+
               <a
                 href={siteConfig.github}
                 className="rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08]"
               >
                 GitHub ↗
               </a>
+
               <a
                 href={siteConfig.linkedin}
                 className="rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08]"
@@ -61,9 +66,17 @@ export default function Home() {
                 ["Reliability", "Systems"],
                 ["Distributed", "AI Infra"],
               ].map(([top, bottom]) => (
-                <div key={top} className="bg-[#090c11] px-5 py-5">
-                  <p className="text-sm font-medium text-white">{top}</p>
-                  <p className="mt-1 text-xs text-zinc-500">{bottom}</p>
+                <div
+                  key={top}
+                  className="bg-[#090c11] px-5 py-5"
+                >
+                  <p className="text-sm font-medium text-white">
+                    {top}
+                  </p>
+
+                  <p className="mt-1 text-xs text-zinc-500">
+                    {bottom}
+                  </p>
                 </div>
               ))}
             </div>
@@ -71,31 +84,66 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="border-t border-white/8 py-24 sm:py-32">
+      <section
+        id="about"
+        className="border-t border-white/8 py-24 sm:py-32"
+      >
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-          <SectionHeading eyebrow="About" title="I like building beyond the notebook." />
+          <SectionHeading
+            eyebrow="About"
+            title="I like building beyond the notebook."
+          />
 
-          <div className="space-y-6 text-base leading-8 text-zinc-400">
-            <p>
-              I work across data science, machine learning and AI engineering,
-              with growing depth in backend systems, graph intelligence and
-              distributed infrastructure.
-            </p>
-            <p>
-              My projects are built around complete engineering workflows:
-              understanding the problem, designing the architecture, building
-              the data and intelligence layers, validating behavior, and
-              turning the result into something that can actually be used.
-            </p>
-            <p className="text-zinc-300">
-              Current focus: financial intelligence, reliability engineering
-              and AI infrastructure.
-            </p>
+          <div>
+            <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {[
+                ["5", "Deployed Systems"],
+                ["2", "Build Events"],
+                ["1", "Professional Certification"],
+              ].map(([value, label]) => (
+                <div
+                  key={label}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4"
+                >
+                  <p className="text-2xl font-semibold text-white">
+                    {value}
+                  </p>
+
+                  <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-6 text-base leading-8 text-zinc-400">
+              <p>
+                I work across data science, machine learning and AI
+                engineering, with growing depth in backend systems,
+                graph intelligence and distributed infrastructure.
+              </p>
+
+              <p>
+                My projects are built around complete engineering
+                workflows: understanding the problem, designing the
+                architecture, building the data and intelligence layers,
+                validating behavior, and turning the result into
+                something that can actually be used.
+              </p>
+
+              <p className="text-zinc-300">
+                Current focus: financial intelligence, reliability
+                engineering and AI infrastructure.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" className="border-t border-white/8 py-24 sm:py-32">
+      <section
+        id="skills"
+        className="border-t border-white/8 py-24 sm:py-32"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Capabilities"
@@ -133,7 +181,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="border-t border-white/8 py-24 sm:py-32">
+      <section
+        id="projects"
+        className="border-t border-white/8 py-24 sm:py-32"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -141,6 +192,7 @@ export default function Home() {
               title="Projects designed as real systems."
               description="Each flagship project will get a dedicated case study covering the problem, architecture, engineering decisions, validation and results."
             />
+
             <a
               href={siteConfig.github}
               className="text-sm font-medium text-cyan-200 transition hover:text-cyan-100"
@@ -151,7 +203,10 @@ export default function Home() {
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
             {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+              />
             ))}
           </div>
         </div>
@@ -163,18 +218,50 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
               Engineering approach
             </p>
+
             <div className="mt-8 grid gap-6 md:grid-cols-5">
               {[
-                ["01", "Understand", "Frame the problem and constraints."],
-                ["02", "Design", "Choose architecture and interfaces."],
-                ["03", "Build", "Implement the core vertical slice."],
-                ["04", "Validate", "Test behavior, evidence and failure modes."],
-                ["05", "Deploy", "Package the system for real use."],
+                [
+                  "01",
+                  "Understand",
+                  "Frame the problem and constraints.",
+                ],
+                [
+                  "02",
+                  "Design",
+                  "Choose architecture and interfaces.",
+                ],
+                [
+                  "03",
+                  "Build",
+                  "Implement the core vertical slice.",
+                ],
+                [
+                  "04",
+                  "Validate",
+                  "Test behavior, evidence and failure modes.",
+                ],
+                [
+                  "05",
+                  "Deploy",
+                  "Package the system for real use.",
+                ],
               ].map(([number, title, description]) => (
-                <div key={number} className="border-t border-white/10 pt-5">
-                  <p className="text-xs text-zinc-600">{number}</p>
-                  <h3 className="mt-4 font-medium text-white">{title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">{description}</p>
+                <div
+                  key={number}
+                  className="border-t border-white/10 pt-5"
+                >
+                  <p className="text-xs text-zinc-600">
+                    {number}
+                  </p>
+
+                  <h3 className="mt-4 font-medium text-white">
+                    {title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                    {description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -182,19 +269,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-white/8 py-24 sm:py-32">
+      <section
+        id="contact"
+        className="border-t border-white/8 py-24 sm:py-32"
+      >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
               Contact
             </p>
+
             <h2 className="text-4xl font-semibold tracking-[-0.035em] text-white sm:text-6xl">
               Interested in AI, data or engineering work?
             </h2>
+
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-              I’m interested in opportunities where machine learning, AI and
-              strong engineering meet real business or systems problems.
+              I’m interested in opportunities where machine learning,
+              AI and strong engineering meet real business or systems
+              problems.
             </p>
+
             <div className="mt-9 flex flex-wrap gap-3">
               {contactEmail && (
                 <a
@@ -204,6 +298,7 @@ export default function Home() {
                   Email me
                 </a>
               )}
+
               <a
                 href={siteConfig.linkedin}
                 className="rounded-full border border-white/12 px-5 py-3 text-sm font-medium text-white"
