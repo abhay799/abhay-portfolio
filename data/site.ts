@@ -91,12 +91,9 @@ export const graphShieldProject: Project = {
     "DuckDB",
     "FastAPI",
   ],
-  github:
-    "https://github.com/abhay799/graphshield-aml",
-  demo:
-    "https://portfolio-sandy-eta-4ipb9hl1lz.vercel.app",
-  api:
-    "https://graphshield-api-production.up.railway.app",
+  github: "https://github.com/abhay799/graphshield-aml",
+  demo: "https://portfolio-sandy-eta-4ipb9hl1lz.vercel.app",
+  api: "https://graphshield-api-production.up.railway.app",
   apiDocs:
     "https://graphshield-api-production.up.railway.app/docs",
   health:
@@ -120,10 +117,8 @@ export const sentinelOpsProject: Project = {
     "OpenTelemetry",
     "Docker",
   ],
-  github:
-    "https://github.com/abhay799/sentinelops-ai",
-  demo:
-    "https://sentinelops-ai-weld.vercel.app",
+  github: "https://github.com/abhay799/sentinelops-ai",
+  demo: "https://sentinelops-ai-weld.vercel.app",
   api:
     "https://sentinelops-ai-backend-production.up.railway.app",
   apiDocs:
@@ -148,10 +143,8 @@ export const mercuryXProject: Project = {
     "APIs",
     "Telemetry",
   ],
-  github:
-    "https://github.com/abhay799/mercury-x",
-  demo:
-    "https://mercury-x-gules.vercel.app",
+  github: "https://github.com/abhay799/mercury-x",
+  demo: "https://mercury-x-gules.vercel.app",
   caseStudy: "/projects/mercury-x",
 };
 
@@ -168,10 +161,8 @@ export const atlasXProject: Project = {
     "Risk",
     "Human Oversight",
   ],
-  github:
-    "https://github.com/abhay799/atlas-x",
-  demo:
-    "https://atlas-x-theta.vercel.app",
+  github: "https://github.com/abhay799/atlas-x",
+  demo: "https://atlas-x-theta.vercel.app",
   caseStudy: "/projects/atlas-x",
 };
 
@@ -193,9 +184,8 @@ export const projects: Project[] = [
       "FastAPI",
       "Graph ML",
     ],
-    github:
-      "https://github.com/abhay799/GraphCite-GCN",
-    demo:
-      "https://graph-cite-gcn-u3jl.vercel.app/",
+    github: "https://github.com/abhay799/GraphCite-GCN",
+    demo: "https://graph-cite-gcn-u3jl.vercel.app/",
+    caseStudy: "/projects/graphcite-gcn",
   },
 ];
