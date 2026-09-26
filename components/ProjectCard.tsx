@@ -15,10 +15,12 @@ export function ProjectCard({ project }: { project: Project }) {
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
               {project.eyebrow}
             </p>
+
             <h3 className="text-2xl font-semibold tracking-tight text-white">
               {project.title}
             </h3>
           </div>
+
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
             {project.status}
           </span>
@@ -27,6 +29,12 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="min-h-24 text-sm leading-6 text-zinc-400">
           {project.description}
         </p>
+
+        {project.metric && (
+          <p className="mt-3 text-xs leading-5 text-cyan-200/80">
+            {project.metric}
+          </p>
+        )}
 
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tags.map((tag) => (

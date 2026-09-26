@@ -102,13 +102,14 @@ export type Project = {
   health?: string;
   readiness?: string;
   caseStudy?: string;
+  metric?: string;
 };
 
 export const graphShieldProject: Project = {
   title: "GraphShield AML",
   eyebrow: "Financial Crime Intelligence",
   description:
-    "Graph-native AML intelligence platform combining graph investigation, temporal feature engineering, machine learning, policy retrieval, explainability and evidence-backed investigation workflows.",
+    "Helps investigators surface suspicious transaction patterns using graph analysis, explainability and policy-grounded evidence.",
   status: "Flagship",
   tags: [
     "Graph ML",
@@ -133,7 +134,7 @@ export const sentinelOpsProject: Project = {
   title: "SentinelOps AI",
   eyebrow: "Reliability Intelligence",
   description:
-    "Reliability intelligence and failure-prevention platform combining telemetry, prediction, correlation, RCA, safety-gated remediation and verified recovery.",
+    "Detects reliability risks, explains likely root causes and gates remediation through safety checks and recovery verification.",
   status: "Flagship",
   tags: [
     "AIOps",
@@ -160,7 +161,7 @@ export const mercuryXProject: Project = {
   title: "MERCURY X",
   eyebrow: "AI Workload Orchestration",
   description:
-    "AI workload orchestration and scheduling engine for compiling workloads into hardware-aware, SLO-aware and safety-validated execution plans.",
+    "Orchestrates AI workloads using hardware-aware, SLO-aware execution planning, scheduling and recovery.",
   status: "Active",
   tags: [
     "Distributed Systems",
@@ -178,7 +179,7 @@ export const atlasXProject: Project = {
   title: "ATLAS X",
   eyebrow: "AI Governance & Mission Control",
   description:
-    "AI governance and mission-control platform for coordinating autonomous agents through policy, risk, authority, provenance and human oversight.",
+    "Governs autonomous AI actions through policy, authority, risk controls, provenance and human oversight.",
   status: "Active",
   tags: [
     "AI Governance",
@@ -201,7 +202,9 @@ export const projects: Project[] = [
     title: "GraphCite-GCN",
     eyebrow: "Graph Machine Learning",
     description:
-      "Interactive Graph Convolutional Network project for citation-network node classification using the Cora dataset, ONNX Runtime and FastAPI.",
+      "Classifies research papers by learning from both paper features and relationships within the citation graph.",
+    metric:
+      "2,708 paper nodes · 10,556 directed edges · 1,433 features · 7 classes",
     status: "Flagship",
     tags: [
       "GCN",
