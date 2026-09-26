@@ -12,7 +12,9 @@ export const siteConfig = {
 
 export const skills = [
   {
-    title: "Programming & Data",
+    title: "Data & Feature Engineering",
+    description:
+      "Applied in GraphShield AML to build transaction features, graph-derived signals and analysis-ready datasets.",
     items: [
       "Python",
       "SQL",
@@ -21,21 +23,56 @@ export const skills = [
       "Polars",
       "PostgreSQL",
       "DuckDB",
+      "Feature Engineering",
     ],
   },
   {
-    title: "Machine Learning",
+    title: "Modeling & Experimentation",
+    description:
+      "Used in GraphCite-GCN and GraphShield AML for model development, graph learning and evaluation workflows.",
     items: [
       "scikit-learn",
       "LightGBM",
-      "Feature Engineering",
-      "Model Evaluation",
-      "Statistics",
+      "PyTorch",
+      "PyTorch Geometric",
+      "Graph ML",
       "Deep Learning",
+      "Statistics",
+      "Model Evaluation",
     ],
   },
   {
-    title: "AI Engineering",
+    title: "MLOps & Serving",
+    description:
+      "Used across GraphShield AML, GraphCite-GCN and MERCURY X to serve models and AI workloads through production-style APIs and execution layers.",
+    items: [
+      "FastAPI",
+      "REST APIs",
+      "ONNX Runtime",
+      "Docker",
+      "Model Serving",
+      "API Validation",
+      "Telemetry",
+    ],
+  },
+  {
+    title: "Infra & Reliability",
+    description:
+      "Applied across SentinelOps AI, MERCURY X and ATLAS X for observability, distributed execution and controlled AI operations.",
+    items: [
+      "Kafka",
+      "Redis",
+      "OpenTelemetry",
+      "Docker",
+      "Distributed Systems",
+      "Reliability Engineering",
+      "AI Governance",
+    ],
+  },
+  {
+    title: "Applied AI Systems",
+    description:
+      "Used where retrieval, agents and language-model components are part of larger engineered systems rather than standalone demos.",
     items: [
       "LLMs",
       "RAG",
@@ -43,17 +80,6 @@ export const skills = [
       "FAISS",
       "Agents",
       "Prompt Engineering",
-    ],
-  },
-  {
-    title: "Backend & Systems",
-    items: [
-      "FastAPI",
-      "REST APIs",
-      "Redis",
-      "Docker",
-      "Kafka",
-      "Distributed Systems",
     ],
   },
 ];

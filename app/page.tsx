@@ -99,22 +99,29 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Capabilities"
-            title="A stack built around data, intelligence and systems."
-            description="Grouped by what I use them for rather than arbitrary percentage bars."
+            title="A stack organized around the ML lifecycle."
+            description="Tools grouped by where I use them across data, modeling, serving and production systems."
           />
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
             {skills.map((group) => (
               <div
                 key={group.title}
                 className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-7"
               >
-                <h3 className="text-base font-semibold text-white">{group.title}</h3>
+                <h3 className="text-base font-semibold text-white">
+                  {group.title}
+                </h3>
+
+                <p className="mt-3 max-w-xl text-sm leading-6 text-zinc-500">
+                  {group.description}
+                </p>
+
                 <div className="mt-5 flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-white/8 bg-black/20 px-3 py-1.5 text-sm text-zinc-400"
+                      className="max-w-full rounded-full border border-white/8 bg-black/20 px-3 py-1.5 text-sm text-zinc-400"
                     >
                       {item}
                     </span>
