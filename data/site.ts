@@ -58,7 +58,10 @@ export const skills = [
   },
 ];
 
-export type ProjectStatus = "Flagship" | "Active" | "Research";
+export type ProjectStatus =
+  | "Flagship"
+  | "Active"
+  | "Research";
 
 export type Project = {
   title: string;
@@ -81,13 +84,25 @@ export const graphShieldProject: Project = {
   description:
     "Graph-native AML intelligence platform combining graph investigation, temporal feature engineering, machine learning, policy retrieval, explainability and evidence-backed investigation workflows.",
   status: "Flagship",
-  tags: ["Graph ML", "RAG", "Polars", "DuckDB", "FastAPI"],
-  github: "https://github.com/abhay799/graphshield-aml",
-  demo: "https://portfolio-sandy-eta-4ipb9hl1lz.vercel.app",
-  api: "https://graphshield-api-production.up.railway.app",
-  apiDocs: "https://graphshield-api-production.up.railway.app/docs",
-  health: "https://graphshield-api-production.up.railway.app/health",
-  readiness: "https://graphshield-api-production.up.railway.app/ready",
+  tags: [
+    "Graph ML",
+    "RAG",
+    "Polars",
+    "DuckDB",
+    "FastAPI",
+  ],
+  github:
+    "https://github.com/abhay799/graphshield-aml",
+  demo:
+    "https://portfolio-sandy-eta-4ipb9hl1lz.vercel.app",
+  api:
+    "https://graphshield-api-production.up.railway.app",
+  apiDocs:
+    "https://graphshield-api-production.up.railway.app/docs",
+  health:
+    "https://graphshield-api-production.up.railway.app/health",
+  readiness:
+    "https://graphshield-api-production.up.railway.app/ready",
   caseStudy: "/projects/graphshield-aml",
 };
 
@@ -97,13 +112,26 @@ export const sentinelOpsProject: Project = {
   description:
     "Reliability intelligence and failure-prevention platform combining telemetry, prediction, correlation, RCA, safety-gated remediation and verified recovery.",
   status: "Flagship",
-  tags: ["AIOps", "SRE", "Causal RCA", "Kafka", "OpenTelemetry", "Docker"],
-  github: "https://github.com/abhay799/sentinelops-ai",
-  demo: "https://sentinelops-ai-weld.vercel.app",
-  api: "https://sentinelops-ai-backend-production.up.railway.app",
-  apiDocs: "https://sentinelops-ai-backend-production.up.railway.app/docs",
-  health: "https://sentinelops-ai-backend-production.up.railway.app/health",
-  readiness: "https://sentinelops-ai-backend-production.up.railway.app/ready",
+  tags: [
+    "AIOps",
+    "SRE",
+    "Causal RCA",
+    "Kafka",
+    "OpenTelemetry",
+    "Docker",
+  ],
+  github:
+    "https://github.com/abhay799/sentinelops-ai",
+  demo:
+    "https://sentinelops-ai-weld.vercel.app",
+  api:
+    "https://sentinelops-ai-backend-production.up.railway.app",
+  apiDocs:
+    "https://sentinelops-ai-backend-production.up.railway.app/docs",
+  health:
+    "https://sentinelops-ai-backend-production.up.railway.app/health",
+  readiness:
+    "https://sentinelops-ai-backend-production.up.railway.app/ready",
   caseStudy: "/projects/sentinelops-ai",
 };
 
@@ -120,7 +148,8 @@ export const mercuryXProject: Project = {
     "APIs",
     "Telemetry",
   ],
-  github: "https://github.com/abhay799/mercury-x",
+  github:
+    "https://github.com/abhay799/mercury-x",
   caseStudy: "/projects/mercury-x",
 };
 
@@ -130,8 +159,17 @@ export const atlasXProject: Project = {
   description:
     "AI governance and mission-control platform for coordinating autonomous agents through policy, risk, authority, provenance and human oversight.",
   status: "Active",
-  tags: ["AI Governance", "Agents", "Policy", "Risk", "Human Oversight"],
-  github: "",
+  tags: [
+    "AI Governance",
+    "Agents",
+    "Policy",
+    "Risk",
+    "Human Oversight",
+  ],
+  github:
+    "https://github.com/abhay799/atlas-x",
+  demo:
+    "https://atlas-x-theta.vercel.app",
   caseStudy: "/projects/atlas-x",
 };
 
@@ -146,8 +184,16 @@ export const projects: Project[] = [
     description:
       "Interactive Graph Convolutional Network project for citation-network node classification using the Cora dataset, ONNX Runtime and FastAPI.",
     status: "Flagship",
-    tags: ["GCN", "PyTorch", "ONNX", "FastAPI", "Graph ML"],
-    github: "https://github.com/abhay799/GraphCite-GCN",
-    demo: "https://graph-cite-gcn-u3jl.vercel.app/",
+    tags: [
+      "GCN",
+      "PyTorch",
+      "ONNX",
+      "FastAPI",
+      "Graph ML",
+    ],
+    github:
+      "https://github.com/abhay799/GraphCite-GCN",
+    demo:
+      "https://graph-cite-gcn-u3jl.vercel.app/",
   },
 ];

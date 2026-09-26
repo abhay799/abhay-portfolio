@@ -21,9 +21,18 @@ test("rejects empty and placeholder-like deployment values", () => {
   assert.equal(isUsableExternalUrl(""), false);
   assert.equal(isUsableExternalUrl("   "), false);
   assert.equal(isUsableExternalUrl("#"), false);
-  assert.equal(isUsableExternalUrl("PASTE_SENTINELOPS_URL_HERE"), false);
-  assert.equal(isUsableExternalUrl("http://example.com"), false);
-  assert.equal(isUsableExternalUrl("https://example.com"), true);
+  assert.equal(
+    isUsableExternalUrl("PASTE_SENTINELOPS_URL_HERE"),
+    false,
+  );
+  assert.equal(
+    isUsableExternalUrl("http://example.com"),
+    false,
+  );
+  assert.equal(
+    isUsableExternalUrl("https://example.com"),
+    true,
+  );
 });
 
 test("builds only configured experience links in product-first order", () => {
@@ -132,15 +141,22 @@ test("omits Live Demo when a project has no usable deployment", () => {
   );
 });
 
-test("ATLAS X homepage exposes only its case study until external links are verified", () => {
+test("ATLAS X homepage actions are Case Study, Live Demo, then GitHub", () => {
   const atlasX: Project = {
     title: "ATLAS X",
     eyebrow: "AI Governance & Mission Control",
     description:
       "AI governance and mission-control platform for coordinating autonomous agents through policy, risk, authority, provenance and human oversight.",
     status: "Active",
-    tags: ["AI Governance", "Agents", "Policy", "Risk", "Human Oversight"],
-    github: "",
+    tags: [
+      "AI Governance",
+      "Agents",
+      "Policy",
+      "Risk",
+      "Human Oversight",
+    ],
+    github: "https://github.com/abhay799/atlas-x",
+    demo: "https://atlas-x-theta.vercel.app",
     caseStudy: "/projects/atlas-x",
   };
 
@@ -150,11 +166,8 @@ test("ATLAS X homepage exposes only its case study until external links are veri
     actions.map(({ kind, label }) => [kind, label]),
     [
       ["internal", "Case Study →"],
+      ["external", "Live Demo ↗"],
+      ["external", "GitHub ↗"],
     ],
-  );
-
-  assert.deepEqual(
-    getExperienceLinks(atlasX).map(({ key }) => key),
-    [],
   );
 });
