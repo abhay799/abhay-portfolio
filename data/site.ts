@@ -7,7 +7,7 @@ export const siteConfig = {
   email: "abhaykumar38921@gmail.com",
   github: "https://github.com/abhay799",
   linkedin: "https://www.linkedin.com/in/abhay-kumar-ba1719261",
-  resume: "",
+  resume: "/Abhay-Kumar-Resume.pdf",
 };
 
 export const skills = [

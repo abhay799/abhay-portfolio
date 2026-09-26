@@ -10,7 +10,11 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function Navbar({ resumeAvailable }: { resumeAvailable: boolean }) {
+export function Navbar({
+  resumeAvailable,
+}: {
+  resumeAvailable: boolean;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,7 +24,8 @@ export function Navbar({ resumeAvailable }: { resumeAvailable: boolean }) {
           <span className="grid size-9 place-items-center rounded-xl border border-cyan-300/25 bg-cyan-300/8 text-sm font-semibold text-cyan-200 transition group-hover:bg-cyan-300/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70">
             AK
           </span>
-          <span className="hidden text-sm font-medium text-white sm:block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70">
+
+          <span className="hidden text-sm font-medium text-white sm:block">
             {siteConfig.name}
           </span>
         </a>
@@ -35,11 +40,11 @@ export function Navbar({ resumeAvailable }: { resumeAvailable: boolean }) {
               {link.label}
             </a>
           ))}
+
           {resumeAvailable && (
             <a
-              href={siteConfig.resume}
-              className="rounded-full border border-white/12 bg-white px-4 py-2 text-sm font-medium text-black transition hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
-              download
+              href="/resume"
+              className="rounded-full border border-cyan-300/25 bg-cyan-300/[0.08] px-4 py-2 text-sm font-medium text-cyan-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
             >
               Resume
             </a>
@@ -51,7 +56,7 @@ export function Navbar({ resumeAvailable }: { resumeAvailable: boolean }) {
           aria-label="Toggle navigation"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
-          className="grid size-10 place-items-center rounded-xl border border-white/10 text-zinc-200 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+          className="grid size-10 place-items-center rounded-xl border border-white/10 text-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 md:hidden"
         >
           <span className="text-xl">{open ? "×" : "≡"}</span>
         </button>
@@ -70,13 +75,14 @@ export function Navbar({ resumeAvailable }: { resumeAvailable: boolean }) {
                 {link.label}
               </a>
             ))}
+
             {resumeAvailable && (
               <a
-                href={siteConfig.resume}
+                href="/resume"
+                onClick={() => setOpen(false)}
                 className="text-sm font-medium text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
-                download
               >
-                Resume ↗
+                View Resume →
               </a>
             )}
           </div>

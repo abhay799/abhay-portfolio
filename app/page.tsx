@@ -17,7 +17,6 @@ export default function Home() {
 
       <section className="relative isolate flex min-h-screen items-center pt-24">
         <div className="hero-grid absolute inset-0 -z-20 opacity-60" />
-
         <div className="absolute left-1/2 top-10 -z-10 h-[520px] w-[850px] -translate-x-1/2 rounded-full bg-cyan-400/[0.065] blur-[120px]" />
 
         <div className="mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
@@ -66,17 +65,9 @@ export default function Home() {
                 ["Reliability", "Systems"],
                 ["Distributed", "AI Infra"],
               ].map(([top, bottom]) => (
-                <div
-                  key={top}
-                  className="bg-[#090c11] px-5 py-5"
-                >
-                  <p className="text-sm font-medium text-white">
-                    {top}
-                  </p>
-
-                  <p className="mt-1 text-xs text-zinc-500">
-                    {bottom}
-                  </p>
+                <div key={top} className="bg-[#090c11] px-5 py-5">
+                  <p className="text-sm font-medium text-white">{top}</p>
+                  <p className="mt-1 text-xs text-zinc-500">{bottom}</p>
                 </div>
               ))}
             </div>
@@ -251,9 +242,7 @@ export default function Home() {
                   key={number}
                   className="border-t border-white/10 pt-5"
                 >
-                  <p className="text-xs text-zinc-600">
-                    {number}
-                  </p>
+                  <p className="text-xs text-zinc-600">{number}</p>
 
                   <h3 className="mt-4 font-medium text-white">
                     {title}
@@ -305,6 +294,15 @@ export default function Home() {
               >
                 LinkedIn ↗
               </a>
+
+              {resumeAvailable && (
+                <a
+                  href="/resume"
+                  className="rounded-full border border-cyan-300/25 bg-cyan-300/[0.08] px-5 py-3 text-sm font-medium text-cyan-100 transition hover:border-cyan-300/40 hover:bg-cyan-300/[0.12]"
+                >
+                  View / Download Resume
+                </a>
+              )}
             </div>
           </div>
         </div>
