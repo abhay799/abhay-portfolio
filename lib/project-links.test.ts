@@ -75,7 +75,7 @@ test("builds compact homepage actions in the required order", () => {
   );
 });
 
-test("MERCURY X homepage actions are Case Study then GitHub with no Live Demo", () => {
+test("MERCURY X homepage actions are Case Study, Live Demo, then GitHub", () => {
   const mercuryX: Project = {
     title: "MERCURY X",
     eyebrow: "AI Workload Orchestration",
@@ -90,6 +90,7 @@ test("MERCURY X homepage actions are Case Study then GitHub with no Live Demo", 
       "Telemetry",
     ],
     github: "https://github.com/abhay799/mercury-x",
+    demo: "https://mercury-x-gules.vercel.app",
     caseStudy: "/projects/mercury-x",
   };
 
@@ -99,12 +100,13 @@ test("MERCURY X homepage actions are Case Study then GitHub with no Live Demo", 
     actions.map(({ kind, label }) => [kind, label]),
     [
       ["internal", "Case Study →"],
+      ["external", "Live Demo ↗"],
       ["external", "GitHub ↗"],
     ],
   );
 });
 
-test("MERCURY X experience links expose only GitHub without deployment metadata", () => {
+test("MERCURY X experience links expose Live Demo and GitHub", () => {
   const mercuryX: Project = {
     title: "MERCURY X",
     eyebrow: "AI Workload Orchestration",
@@ -119,12 +121,13 @@ test("MERCURY X experience links expose only GitHub without deployment metadata"
       "Telemetry",
     ],
     github: "https://github.com/abhay799/mercury-x",
+    demo: "https://mercury-x-gules.vercel.app",
     caseStudy: "/projects/mercury-x",
   };
 
   assert.deepEqual(
     getExperienceLinks(mercuryX).map(({ key }) => key),
-    ["github"],
+    ["demo", "github"],
   );
 });
 

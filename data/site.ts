@@ -150,6 +150,8 @@ export const mercuryXProject: Project = {
   ],
   github:
     "https://github.com/abhay799/mercury-x",
+  demo:
+    "https://mercury-x-gules.vercel.app",
   caseStudy: "/projects/mercury-x",
 };
 
